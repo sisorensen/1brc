@@ -1,14 +1,4 @@
-"""
-res: a dict, for each entry we have on the form min, max, total_degrees, total_val
-So far: done 10**7, 11,9 sec -> 7.37 sec
-
-measurements.txt - 10^8 rader, 7 sec! 8 workers
-measurements2.txt - 10^9 rader - 57 sec
-measurement3.txt - 10^6 rader
-"""
-
 from concurrent.futures import ProcessPoolExecutor
-import yappi
 import time
 import mmap
 import os
@@ -79,7 +69,4 @@ def main():
     print(time.time() - t)
     
 if __name__ == "__main__":
-  yappi.start(profile_threads=True)
   main()
-  yappi.stop()
-  stats = yappi.get_func_stats().sort("ttot").print_all()
