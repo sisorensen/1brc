@@ -63,7 +63,7 @@ def main():
     sorted_res = sorted([(c, v) for c, v in cities.items()])
 
     for c, v in sorted_res:
-        print(f"city: {str(c, "utf-8")}, min: {v[0]}, avg: {round(v[2] / v[3], 1)}, max: {v[1]}")
+        print(f"{str(c, "utf-8")}, min: {v[0]}, avg: {round(v[2] / v[3], 1)}, max: {v[1]}")
     
 if __name__ == "__main__":
   main()
