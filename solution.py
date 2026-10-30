@@ -39,7 +39,7 @@ def processchunk(filepath, start, end):
         return res
 
 def main():
-    t = time.time()
+    # t = time.time()
     filepath = "measurements.txt"
     filesize = os.path.getsize(filepath)
     cities = {}
@@ -66,7 +66,7 @@ def main():
 
     for c, v in sorted_res:
         print(f"{c};{v[0]};{v[1]};{round(v[2] / v[3], 1)}")
-    print(time.time() - t)
+    # print(time.time() - t)
     
 if __name__ == "__main__":
   main()
