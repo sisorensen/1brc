@@ -1,5 +1,4 @@
 from concurrent.futures import ProcessPoolExecutor
-import time
 import mmap
 import os
 from itertools import repeat
@@ -39,7 +38,6 @@ def processchunk(filepath, start, end):
         return res
 
 def main():
-    # t = time.time()
     filepath = "measurements.txt"
     filesize = os.path.getsize(filepath)
     cities = {}
@@ -65,8 +63,7 @@ def main():
     sorted_res = sorted([(c, v) for c, v in cities.items()])
 
     for c, v in sorted_res:
-        print(f"{c};{v[0]};{v[1]};{round(v[2] / v[3], 1)}")
-    # print(time.time() - t)
+        print(f"city: {str(c, "utf-8")}, min: {v[0]}, avg: {round(v[2] / v[3], 1)}, max: {v[1]}")
     
 if __name__ == "__main__":
   main()
